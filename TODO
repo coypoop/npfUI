@@ -1,0 +1,33 @@
+- effectively, none of the 'backend' works.
+  make it work, test that it's fine.
+
+- validate all input.
+
+- have a button to sane defaults (as opposed to grabbing existing)
+
+- revert changes if no response in 10 seconds
+  submit page warns that stuff will be reverted, normal pages undo any reverting.
+
+- privilege separation
+
+- have a marker in npf.conf to identify we created it, otherwise,
+  provide a giant warning in manipulating npf/blacklist rules.
+
+- network graphs, following command is the daemon (REQUIRE NETWORKING)
+  alternatively, launch at website startup.
+
+  for iface in $(ifconfig -lb)
+    do netstat -b -s -w 1 -I $iface \
+       | sed -e '/total out/ { N; N; d; }' \
+       > logfile."$iface"
+  done
+
+  run gnuplot for SVG graphs.
+
+- login page
+
+- address XXXs
+
+- allow translations
+
+- consistent naming (- vs _ ...)
